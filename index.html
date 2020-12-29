@@ -201,7 +201,7 @@
       <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;html&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,9 +210,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo-24ff514d.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="html">html</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -226,6 +223,9 @@
           </li>
           <li>
             <a href="#gestion-des-pages" class="toc-h1 toc-link" data-title="Gestion des pages">Gestion des pages</a>
+          </li>
+          <li>
+            <a href="#wordpress" class="toc-h1 toc-link" data-title="Wordpress">Wordpress</a>
           </li>
           <li>
             <a href="#autre-options" class="toc-h1 toc-link" data-title="Autre options">Autre options</a>
@@ -287,6 +287,29 @@
 <p>Il est possible d&#39;empêcher la redirection en utilisant l&#39;attribut <strong>prevent_redirect</strong>.</p>
 
 <p>L&#39;URL sera toujours manipulée pour utiliser la page des résultats, mais aucune redirection ne sera faite.</p>
+<h1 id='wordpress'>Wordpress</h1><pre class="highlight plaintext"><code>[intconv path="nos-offres" prevent_redirect="true"]
+</code></pre><pre class="highlight php tab-php"><code>do_shortcode( '[intconv path="nos-offres" prevent_redirect="true"]' );
+</code></pre>
+<p>Le plugin WordPress est constitué de 2 fichier.</p>
+
+<ul>
+<li><p>intconv.php:</p>
+
+<ul>
+<li>plugin principal qui définit le shortcode</li>
+<li>ajoute une div qui intégrera l&#39;application</li>
+<li>ajoute les feuilles de style de l&#39;application et une police Google</li>
+<li>ajoute le script pour l&#39;exécution de l&#39;application</li>
+</ul></li>
+<li><p>part-intconv.php:</p>
+
+<ul>
+<li>appelle le shortcode à l&#39;interieur d&#39;une section du thème</li>
+<li>permet d&#39;encapsuler l&#39;application dans certains éléments du thème à réutiliser à différents endroits (modifiable si besoin)</li>
+</ul></li>
+</ul>
+
+<p>Il est alors possible d&#39;utiliser le shortcode directement depuis le <strong>contenu WordPress</strong>, via l&#39;appel de la fonction <strong>do_shortcode</strong> ou bien en <strong>intégrant le fragment</strong> mis à disposition.</p>
 <h1 id='autre-options'>Autre options</h1><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
     <span class="na">id=</span><span class="s">"intconv-root"</span>
     <span class="na">hide_searchbar=</span><span class="s">"true"</span>
@@ -299,9 +322,6 @@
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="html">html</a>
-          </div>
       </div>
     </div>
   </body>
