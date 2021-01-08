@@ -180,3 +180,22 @@ Il est possible d'ajouter un bouton afin de rediriger l'utilisateur vers une pag
 L'application doit être présente sur cette page.
 
 Des paramètres peuvent être fournies à l'application en définissant l'URL de recherche souhaitée.
+
+## Personnaliser le titre
+
+```html
+<div
+		id="intconv-root"
+		static_title="true"
+		custom_title="Bonjour <br/>à vous !"
+>
+</div>
+```
+
+Il est possible de rendre le titre de l'accueil statique avec l'attribut **static_title**.
+
+Il est également possible de modifier sa valeur avec l'attribut **custom_title**.
+
+Ce changement peut prendre en compte des éléments HTML, afin de faire du formatage de texte.
+
+L'attribut **custom_title** n'est utilisé que si le titre est statique.
