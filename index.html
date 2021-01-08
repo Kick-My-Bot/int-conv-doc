@@ -248,6 +248,9 @@
                   <li>
                     <a href="#ajouter-un-bouton-pour-rediriger-vers-une-page-d-39-offres" class="toc-h2 toc-link" data-title="Ajouter un bouton pour rediriger vers une page d'offres">Ajouter un bouton pour rediriger vers une page d'offres</a>
                   </li>
+                  <li>
+                    <a href="#personnaliser-le-titre" class="toc-h2 toc-link" data-title="Personnaliser le titre">Personnaliser le titre</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -390,6 +393,20 @@
 <p>L&#39;application doit être présente sur cette page.</p>
 
 <p>Des paramètres peuvent être fournies à l&#39;application en définissant l&#39;URL de recherche souhaitée.</p>
+<h2 id='personnaliser-le-titre'>Personnaliser le titre</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">static_title=</span><span class="s">"true"</span>
+        <span class="na">custom_title=</span><span class="s">"Bonjour &lt;br/&gt;à vous !"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible de rendre le titre de l&#39;accueil statique avec l&#39;attribut <strong>static_title</strong>.</p>
+
+<p>Il est également possible de modifier sa valeur avec l&#39;attribut <strong>custom_title</strong>.</p>
+
+<p>Ce changement peut prendre en compte des éléments HTML, afin de faire du formatage de texte.</p>
+
+<p>L&#39;attribut <strong>custom_title</strong> n&#39;est utilisé que si le titre est statique.</p>
 
       </div>
       <div class="dark-box">
