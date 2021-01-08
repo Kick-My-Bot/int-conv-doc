@@ -229,6 +229,26 @@
           </li>
           <li>
             <a href="#autre-options" class="toc-h1 toc-link" data-title="Autre options">Autre options</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cacher-la-barre-de-recherche" class="toc-h2 toc-link" data-title="Cacher la barre de recherche">Cacher la barre de recherche</a>
+                  </li>
+                  <li>
+                    <a href="#cacher-les-filtres-de-recherche" class="toc-h2 toc-link" data-title="Cacher les filtres de recherche">Cacher les filtres de recherche</a>
+                  </li>
+                  <li>
+                    <a href="#limiter-le-nombre-d-39-offres-en-resultat" class="toc-h2 toc-link" data-title="Limiter le nombre d'offres en résultat">Limiter le nombre d'offres en résultat</a>
+                  </li>
+                  <li>
+                    <a href="#ne-pas-afficher-la-page-d-39-accueil" class="toc-h2 toc-link" data-title="Ne pas afficher la page d'accueil">Ne pas afficher la page d'accueil</a>
+                  </li>
+                  <li>
+                    <a href="#filtrer-les-resultats" class="toc-h2 toc-link" data-title="Filtrer les résultats">Filtrer les résultats</a>
+                  </li>
+                  <li>
+                    <a href="#ajouter-un-bouton-pour-rediriger-vers-une-page-d-39-offres" class="toc-h2 toc-link" data-title="Ajouter un bouton pour rediriger vers une page d'offres">Ajouter un bouton pour rediriger vers une page d'offres</a>
+                  </li>
+              </ul>
           </li>
       </ul>
     </div>
@@ -318,15 +338,58 @@
 </ul>
 
 <p>Il est alors possible d&#39;utiliser le shortcode directement depuis le <strong>contenu WordPress</strong>, via l&#39;appel de la fonction <strong>do_shortcode</strong> ou bien en <strong>intégrant le fragment</strong> mis à disposition.</p>
-<h1 id='autre-options'>Autre options</h1><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+<h1 id='autre-options'>Autre options</h1><h2 id='cacher-la-barre-de-recherche'>Cacher la barre de recherche</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
     <span class="na">id=</span><span class="s">"intconv-root"</span>
     <span class="na">hide_searchbar=</span><span class="s">"true"</span>
 <span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre>
 <p>Il est possible de masquer la barre de recherche avec l&#39;attribut <strong>hide_searchbar</strong>.</p>
+<h2 id='cacher-les-filtres-de-recherche'>Cacher les filtres de recherche</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">hide_filters=</span><span class="s">"true"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible de masquer les filtres de recherche avec l&#39;attribut <strong>hide_filters</strong>.</p>
+<h2 id='limiter-le-nombre-d-39-offres-en-resultat'>Limiter le nombre d&#39;offres en résultat</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">number_of_offers_limit=</span><span class="s">3</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible de limiter le nombre d&#39;offres en résultat de recherche avec l&#39;attribut <strong>number_of_offers_limit</strong>.</p>
 
-<p>Cela peut permettre d&#39;avoir une interface simplifiée dans un contexte particulier.</p>
+<p>La limite peut se trouver entre 1 et 10.</p>
+<h2 id='ne-pas-afficher-la-page-d-39-accueil'>Ne pas afficher la page d&#39;accueil</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">no_landing=</span><span class="s">"true"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible de ne pas afficher la page d&#39;accuiel avec l&#39;attribut <strong>no_landing</strong>.</p>
+<h2 id='filtrer-les-resultats'>Filtrer les résultats</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">search_filters=</span><span class="s">"jobname=audit"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible de filtrer les résultats avec l&#39;attribut <strong>search_filters</strong>.</p>
+
+<p>Cela permet de filtrer les résultats de recherche selon une requête précise, au format <strong>clé=valeur</strong>.</p>
+
+<p>Afin d&#39;obtenir la requête désirée, il est possible de manipuler l&#39;application pour obtenir une combinaison de résultats, et ainsi utiliser l&#39;URL obtenue pour l&#39;utiliser comme valeur de l&#39;attribut.</p>
+<h2 id='ajouter-un-bouton-pour-rediriger-vers-une-page-d-39-offres'>Ajouter un bouton pour rediriger vers une page d&#39;offres</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">redirect_to_offers=</span><span class="s">"https://exemple-site.com/nos-offres?skills=audit"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible d&#39;ajouter un bouton afin de rediriger l&#39;utilisateur vers une page d&#39;offres avec l&#39;attribut <strong>redirect_to_offers</strong>.</p>
+
+<p>L&#39;application doit être présente sur cette page.</p>
+
+<p>Des paramètres peuvent être fournies à l&#39;application en définissant l&#39;URL de recherche souhaitée.</p>
 
       </div>
       <div class="dark-box">
