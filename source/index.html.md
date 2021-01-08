@@ -1,9 +1,6 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - html
-
 search: true
 ---
 
@@ -72,7 +69,37 @@ Il est possible d'empêcher la redirection en utilisant l'attribut **prevent_red
 
 L'URL sera toujours manipulée pour utiliser la page des résultats, mais aucune redirection ne sera faite.
 
+# Wordpress
+
+> Shortcode WordPress à insérer dans le contenu
+
+```
+[intconv path="nos-offres" prevent_redirect="true"]
+```
+
+> Fonction WordPress à exécuter dans un fichier PHP
+
+```php
+do_shortcode( '[intconv path="nos-offres" prevent_redirect="true"]' );
+```
+
+Le plugin WordPress est constitué de 2 fichier, à placer dans un dossier (par exemple **/kmblabs**) dans le dossier **/plugins** du thème.
+
+- intconv.php:
+	- plugin principal qui définit le shortcode
+	- ajoute une div qui intégrera l'application
+	- ajoute les feuilles de style de l'application et une police Google
+	- ajoute le script pour l'exécution de l'application
+
+- part-intconv.php:
+	- appelle le shortcode à l'interieur d'une section du thème
+	- permet d'encapsuler l'application dans certains éléments du thème à réutiliser à différents endroits (modifiable si besoin)
+
+Il est alors possible d'utiliser le shortcode directement depuis le **contenu WordPress**, via l'appel de la fonction **do_shortcode** ou bien en **intégrant le fragment** mis à disposition.
+
 # Autre options
+
+## Cacher la barre de recherche
 
 ```html
 <div
@@ -84,4 +111,72 @@ L'URL sera toujours manipulée pour utiliser la page des résultats, mais aucune
 
 Il est possible de masquer la barre de recherche avec l'attribut **hide_searchbar**.
 
-Cela peut permettre d'avoir une interface simplifiée dans un contexte particulier.
+## Cacher les filtres de recherche
+
+```html
+<div
+		id="intconv-root"
+		hide_filters="true"
+>
+</div>
+```
+
+Il est possible de masquer les filtres de recherche avec l'attribut **hide_filters**.
+
+## Limiter le nombre d'offres en résultat
+
+```html
+<div
+		id="intconv-root"
+		number_of_offers_limit=3
+>
+</div>
+```
+
+Il est possible de limiter le nombre d'offres en résultat de recherche avec l'attribut **number_of_offers_limit**.
+
+La limite peut se trouver entre 1 et 10.
+
+## Ne pas afficher la page d'accueil
+
+```html
+<div
+		id="intconv-root"
+		no_landing="true"
+>
+</div>
+```
+
+Il est possible de ne pas afficher la page d'accuiel avec l'attribut **no_landing**.
+
+## Filtrer les résultats
+
+```html
+<div
+		id="intconv-root"
+		search_filters="jobname=audit"
+>
+</div>
+```
+
+Il est possible de filtrer les résultats avec l'attribut **search_filters**.
+
+Cela permet de filtrer les résultats de recherche selon une requête précise, au format **clé=valeur**.
+
+Afin d'obtenir la requête désirée, il est possible de manipuler l'application pour obtenir une combinaison de résultats, et ainsi utiliser l'URL obtenue pour l'utiliser comme valeur de l'attribut.
+
+## Ajouter un bouton pour rediriger vers une page d'offres
+
+```html
+<div
+		id="intconv-root"
+		redirect_to_offers="https://exemple-site.com/nos-offres?skills=audit"
+>
+</div>
+```
+
+Il est possible d'ajouter un bouton afin de rediriger l'utilisateur vers une page d'offres avec l'attribut **redirect_to_offers**.
+
+L'application doit être présente sur cette page.
+
+Des paramètres peuvent être fournies à l'application en définissant l'URL de recherche souhaitée.
