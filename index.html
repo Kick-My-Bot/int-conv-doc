@@ -251,6 +251,24 @@
                   <li>
                     <a href="#personnaliser-le-titre" class="toc-h2 toc-link" data-title="Personnaliser le titre">Personnaliser le titre</a>
                   </li>
+                  <li>
+                    <a href="#enlever-la-page-d-39-accueil" class="toc-h2 toc-link" data-title="Enlever la page d'accueil">Enlever la page d'accueil</a>
+                  </li>
+                  <li>
+                    <a href="#ajouter-un-bouton-de-recherche-linkedin" class="toc-h2 toc-link" data-title="Ajouter un bouton de recherche LinkedIn">Ajouter un bouton de recherche LinkedIn</a>
+                  </li>
+                  <li>
+                    <a href="#ajouter-des-offres-sur-la-page-d-39-accueil" class="toc-h2 toc-link" data-title="Ajouter des offres sur la page d'accueil">Ajouter des offres sur la page d'accueil</a>
+                  </li>
+                  <li>
+                    <a href="#afficher-les-offres-dans-un-carousel" class="toc-h2 toc-link" data-title="Afficher les offres dans un carousel">Afficher les offres dans un carousel</a>
+                  </li>
+                  <li>
+                    <a href="#ajouter-une-image-en-fond-sur-la-page-d-39-accueil" class="toc-h2 toc-link" data-title="Ajouter une image en fond sur la page d'accueil">Ajouter une image en fond sur la page d'accueil</a>
+                  </li>
+                  <li>
+                    <a href="#activer-le-mode-sombre" class="toc-h2 toc-link" data-title="Activer le mode sombre">Activer le mode sombre</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -407,6 +425,61 @@
 <p>Ce changement peut prendre en compte des éléments HTML, afin de faire du formatage de texte.</p>
 
 <p>L&#39;attribut <strong>custom_title</strong> n&#39;est utilisé que si le titre est statique.</p>
+
+<p>Pour les titres dynamiques, il est possbile d&#39;utiliser l&#39;attribut <strong>custom_typing</strong>, et de séparer les phrases affichées par <strong>////</strong>. Les mots à afficher en gras sont à mettre entre les tags <strong>{b}{/b}</strong> (exemple: Je cherche des offres sur <strong>{b}</strong> Paris <strong>{/b}</strong>)</p>
+<h2 id='enlever-la-page-d-39-accueil'>Enlever la page d&#39;accueil</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">no_landing=</span><span class="s">"true"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible d&#39;enlever la page d&#39;accueil et de mettre uniquement la page offres avec l&#39;attribut <strong>no_landing</strong></p>
+<h2 id='ajouter-un-bouton-de-recherche-linkedin'>Ajouter un bouton de recherche LinkedIn</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">linkedin_button=</span><span class="s">"true"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible d&#39;ajouter un bouton afin d&#39;effectuer une recherche lié à un profil LinkedIn avec l&#39;attribut <strong>linkedin_button</strong>.</p>
+
+<p>Cela permet à l&#39;utilisateur de se connecter à LinkedIn et le moteur effectuera une recherche en lien avec le profil détecté.</p>
+<h2 id='ajouter-des-offres-sur-la-page-d-39-accueil'>Ajouter des offres sur la page d&#39;accueil</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">offers_landing=</span><span class="s">"city_name=PARIS"</span>
+        <span class="na">offers_landing_limit=</span><span class="s">4</span>
+        <span class="na">offers_landing_title=</span><span class="s">"Offres à la une"</span>
+        <span class="na">offers_landing_title_redirect=</span><span class="s">"nos-offres"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible d&#39;ajouter des offres à afficher sur la page d&#39;accueil avec l&#39;attribut <strong>offers_landing</strong> en mettant les filtres associés aux offres à afficher.</p>
+
+<p>L&#39;attribut <strong>offers_landing_limit</strong> (nombre) permet de définir le nombre d&#39;offres à afficher.</p>
+
+<p>L&#39;attribut <strong>offers_landing_title</strong> permet de définir le titre affiché au dessus des offres.</p>
+
+<p>L&#39;attribut <strong>offers_landing_title_redirect</strong> ajoute un lien dans le titre redirigeant vers les offres (sous la forme &quot;(ou découvrez nos N offres)&quot;).</p>
+<h2 id='afficher-les-offres-dans-un-carousel'>Afficher les offres dans un carousel</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">offers_carousel=</span><span class="s">"true"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible d&#39;afficher les offres sur la page &quot;offres&quot; en mode carousel avec l&#39;attribut <strong>offers_carousel</strong> (booléen).</p>
+<h2 id='ajouter-une-image-en-fond-sur-la-page-d-39-accueil'>Ajouter une image en fond sur la page d&#39;accueil</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">background=</span><span class="s">"https://lien-vers-mon-image.com"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible d&#39;afficher une image en fond (via un lien) sur la page d&#39;accueil avec l&#39;attribut <strong>background</strong>.</p>
+<h2 id='activer-le-mode-sombre'>Activer le mode sombre</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;div</span>
+        <span class="na">id=</span><span class="s">"intconv-root"</span>
+        <span class="na">dark_mode=</span><span class="s">"true"</span>
+<span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<p>Il est possible d&#39;activer le mode sombre permettant de mettre des textes de la page d&#39;accueil en blanc avec l&#39;attribut <strong>dark_mode</strong>.</p>
 
       </div>
       <div class="dark-box">
