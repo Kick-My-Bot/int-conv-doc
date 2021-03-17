@@ -199,3 +199,88 @@ Il est également possible de modifier sa valeur avec l'attribut **custom_title*
 Ce changement peut prendre en compte des éléments HTML, afin de faire du formatage de texte.
 
 L'attribut **custom_title** n'est utilisé que si le titre est statique.
+
+Pour les titres dynamiques, il est possbile d'utiliser l'attribut **custom_typing**, et de séparer les phrases affichées par **////**. Les mots à afficher en gras sont à mettre entre les tags **{b}{/b}** (exemple: Je cherche des offres sur **{b}** Paris **{/b}**)
+
+## Enlever la page d'accueil
+
+```html
+<div
+		id="intconv-root"
+		no_landing="true"
+>
+</div>
+```
+
+Il est possible d'enlever la page d'accueil et de mettre uniquement la page offres avec l'attribut **no_landing**
+
+## Ajouter un bouton de recherche LinkedIn
+
+```html
+<div
+		id="intconv-root"
+		linkedin_button="true"
+>
+</div>
+```
+
+Il est possible d'ajouter un bouton afin d'effectuer une recherche lié à un profil LinkedIn avec l'attribut **linkedin_button**.
+
+Cela permet à l'utilisateur de se connecter à LinkedIn et le moteur effectuera une recherche en lien avec le profil détecté.
+
+## Ajouter des offres sur la page d'accueil
+
+```html
+<div
+		id="intconv-root"
+		offers_landing="city_name=PARIS"
+		offers_landing_limit=4
+		offers_landing_title="Offres à la une"
+		offers_landing_title_redirect="nos-offres"
+>
+</div>
+```
+
+Il est possible d'ajouter des offres à afficher sur la page d'accueil avec l'attribut **offers_landing** en mettant les filtres associés aux offres à afficher.
+
+L'attribut **offers_landing_limit** (nombre) permet de définir le nombre d'offres à afficher.
+
+L'attribut **offers_landing_title** permet de définir le titre affiché au dessus des offres.
+
+L'attribut **offers_landing_title_redirect** ajoute un lien dans le titre redirigeant vers les offres (sous la forme "(ou découvrez nos N offres)").
+
+## Afficher les offres dans un carousel
+
+```html
+<div
+		id="intconv-root"
+		offers_carousel="true"
+>
+</div>
+```
+
+Il est possible d'afficher les offres sur la page "offres" en mode carousel avec l'attribut **offers_carousel** (booléen).
+
+## Ajouter une image en fond sur la page d'accueil
+
+```html
+<div
+		id="intconv-root"
+		background="https://lien-vers-mon-image.com"
+>
+</div>
+```
+
+Il est possible d'afficher une image en fond (via un lien) sur la page d'accueil avec l'attribut **background**.
+
+## Activer le mode sombre
+
+```html
+<div
+		id="intconv-root"
+		dark_mode="true"
+>
+</div>
+```
+
+Il est possible d'activer le mode sombre permettant de mettre des textes de la page d'accueil en blanc avec l'attribut **dark_mode**.
